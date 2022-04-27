@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,11 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="datas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>datas.xsd</DependentUpon>
-    </Compile>
     <Compile Include="guitarItem.cs" />
     <Compile Include="itemDisplay.cs">
       <SubType>Form</SubType>
@@ -81,17 +77,6 @@
     <EmbeddedResource Include="itemDisplay.resx">
       <DependentUpon>itemDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="datas.xsc">
-      <DependentUpon>datas.xsd</DependentUpon>
-    </None>
-    <None Include="datas.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>datas.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="datas.xss">
-      <DependentUpon>datas.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,5 +90,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="conf.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>

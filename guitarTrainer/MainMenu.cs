@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Configuration;
+using System.Collections.Specialized;
 
 namespace guitarTrainer
 {
@@ -17,6 +19,8 @@ namespace guitarTrainer
 		private DateTime startingPeriod;
 		private TimeSpan timerTot = new TimeSpan(0);
 
+		string sAttr;
+
 		public MainMenu()
 		{
 			InitializeComponent();
@@ -25,7 +29,9 @@ namespace guitarTrainer
 		private void btn_warmUp_Click(object sender, EventArgs e)
 		{
 			chekStartingTime();
+			sAttr = ConfigurationManager.AppSettings.Get("Key0");
 			itemDisplay ex = new itemDisplay("Warm Up");
+//			itemDisplay ex = new itemDisplay(sAttr);
 			ex.Show();
 		}
 
@@ -100,7 +106,7 @@ namespace guitarTrainer
 			}
 		}
 
-		private void btn_timer_raz_Click(object sender, EventArgs e)
+		private void btn_timer_raz__Click(object sender, EventArgs e)
 		{
 			timerTot = TimeSpan.Zero;
 			startingPeriod = DateTime.Now;
@@ -108,6 +114,11 @@ namespace guitarTrainer
 		}
 
 		private void btn_raz_all_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btn_test_Click(object sender, EventArgs e)
 		{
 
 		}

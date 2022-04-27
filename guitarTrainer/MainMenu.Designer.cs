@@ -42,10 +42,11 @@
 			this.lbl_elapse_tot = new System.Windows.Forms.Label();
 			this.timerClock = new System.Windows.Forms.Timer(this.components);
 			this.gb_timer = new System.Windows.Forms.GroupBox();
-			this.btn_timer_start = new System.Windows.Forms.Button();
-			this.btn_timer_pause = new System.Windows.Forms.Button();
 			this.btn_timer_raz = new System.Windows.Forms.Button();
+			this.btn_timer_pause = new System.Windows.Forms.Button();
+			this.btn_timer_start = new System.Windows.Forms.Button();
 			this.btn_raz_all = new System.Windows.Forms.Button();
+			this.btn_test = new System.Windows.Forms.Button();
 			this.gb_timer.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -173,15 +174,15 @@
 			this.gb_timer.TabStop = false;
 			this.gb_timer.Text = "Timer";
 			// 
-			// btn_timer_start
+			// btn_timer_raz
 			// 
-			this.btn_timer_start.Location = new System.Drawing.Point(6, 50);
-			this.btn_timer_start.Name = "btn_timer_start";
-			this.btn_timer_start.Size = new System.Drawing.Size(47, 26);
-			this.btn_timer_start.TabIndex = 6;
-			this.btn_timer_start.Text = "Start";
-			this.btn_timer_start.UseVisualStyleBackColor = true;
-			this.btn_timer_start.Click += new System.EventHandler(this.btn_timer_start_Click);
+			this.btn_timer_raz.Location = new System.Drawing.Point(112, 50);
+			this.btn_timer_raz.Name = "btn_timer_raz";
+			this.btn_timer_raz.Size = new System.Drawing.Size(47, 26);
+			this.btn_timer_raz.TabIndex = 6;
+			this.btn_timer_raz.Text = "RAZ";
+			this.btn_timer_raz.UseVisualStyleBackColor = true;
+			this.btn_timer_raz.Click += new System.EventHandler(this.btn_timer_raz_Click);
 			// 
 			// btn_timer_pause
 			// 
@@ -193,15 +194,15 @@
 			this.btn_timer_pause.UseVisualStyleBackColor = true;
 			this.btn_timer_pause.Click += new System.EventHandler(this.btn_timer_pause_Click);
 			// 
-			// btn_timer_raz
+			// btn_timer_start
 			// 
-			this.btn_timer_raz.Location = new System.Drawing.Point(112, 50);
-			this.btn_timer_raz.Name = "btn_timer_raz";
-			this.btn_timer_raz.Size = new System.Drawing.Size(47, 26);
-			this.btn_timer_raz.TabIndex = 6;
-			this.btn_timer_raz.Text = "RAZ";
-			this.btn_timer_raz.UseVisualStyleBackColor = true;
-			this.btn_timer_raz.Click += new System.EventHandler(this.btn_timer_raz_Click);
+			this.btn_timer_start.Location = new System.Drawing.Point(6, 50);
+			this.btn_timer_start.Name = "btn_timer_start";
+			this.btn_timer_start.Size = new System.Drawing.Size(47, 26);
+			this.btn_timer_start.TabIndex = 6;
+			this.btn_timer_start.Text = "Start";
+			this.btn_timer_start.UseVisualStyleBackColor = true;
+			this.btn_timer_start.Click += new System.EventHandler(this.btn_timer_start_Click);
 			// 
 			// btn_raz_all
 			// 
@@ -213,11 +214,22 @@
 			this.btn_raz_all.UseVisualStyleBackColor = true;
 			this.btn_raz_all.Click += new System.EventHandler(this.btn_raz_all_Click);
 			// 
+			// btn_test
+			// 
+			this.btn_test.Location = new System.Drawing.Point(48, 304);
+			this.btn_test.Name = "btn_test";
+			this.btn_test.Size = new System.Drawing.Size(107, 55);
+			this.btn_test.TabIndex = 11;
+			this.btn_test.Text = "TEST";
+			this.btn_test.UseVisualStyleBackColor = true;
+			this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
+			// 
 			// MainMenu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(356, 220);
+			this.ClientSize = new System.Drawing.Size(356, 460);
+			this.Controls.Add(this.btn_test);
 			this.Controls.Add(this.btn_raz_all);
 			this.Controls.Add(this.gb_timer);
 			this.Controls.Add(this.lbl_elapsed_fun);
@@ -262,6 +274,7 @@
 		private System.Windows.Forms.Button btn_timer_pause;
 		private System.Windows.Forms.Button btn_timer_start;
 		private System.Windows.Forms.Button btn_raz_all;
+		private System.Windows.Forms.Button btn_test;
 	}
 }
 
