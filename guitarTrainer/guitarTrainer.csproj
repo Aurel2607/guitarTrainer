@@ -47,12 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="guitarItem.cs" />
-    <Compile Include="itemDisplay.cs">
+    <Compile Include="AppConfigParser.cs" />
+    <Compile Include="frm_TestVlc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="itemDisplay.Designer.cs">
-      <DependentUpon>itemDisplay.cs</DependentUpon>
+    <Compile Include="frm_TestVlc.Designer.cs">
+      <DependentUpon>frm_TestVlc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="guitarItem.cs" />
+    <Compile Include="sectionDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sectionDisplay.Designer.cs">
+      <DependentUpon>sectionDisplay.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -62,6 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_TestVlc.resx">
+      <DependentUpon>frm_TestVlc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,8 +84,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="itemDisplay.resx">
-      <DependentUpon>itemDisplay.cs</DependentUpon>
+    <EmbeddedResource Include="sectionDisplay.resx">
+      <DependentUpon>sectionDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -92,6 +102,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="conf.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxAXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

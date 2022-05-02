@@ -19,8 +19,6 @@ namespace guitarTrainer
 		private DateTime startingPeriod;
 		private TimeSpan timerTot = new TimeSpan(0);
 
-		string sAttr;
-
 		public MainMenu()
 		{
 			InitializeComponent();
@@ -29,30 +27,38 @@ namespace guitarTrainer
 		private void btn_warmUp_Click(object sender, EventArgs e)
 		{
 			chekStartingTime();
-			sAttr = ConfigurationManager.AppSettings.Get("Key0");
-			itemDisplay ex = new itemDisplay("Warm Up");
-//			itemDisplay ex = new itemDisplay(sAttr);
+
+			List<string[]> wuLst = AppConfigParser.parse("WU");
+
+			foreach(string[] strTab in wuLst)
+			{
+				Console.WriteLine("Name:'" + strTab[0] + "', Pic:'" + strTab[1] + "', Audio:'" + strTab[2] + "', Video:'" + strTab[3]);
+			}
+
+			sectionDisplay ex = new sectionDisplay("WarmUp", wuLst);
 			ex.Show();
+
+
 		}
 
 		private void btn_riff_Click(object sender, EventArgs e)
 		{
 			chekStartingTime();
-			itemDisplay ex = new itemDisplay("Riff");
+			sectionDisplay ex = new sectionDisplay("Riff");
 			ex.Show();
 		}
 
 		private void btn_solo_Click(object sender, EventArgs e)
 		{
 			chekStartingTime();
-			itemDisplay ex = new itemDisplay("Solo");
+			sectionDisplay ex = new sectionDisplay("Solo");
 			ex.Show();
 		}
 
 		private void btn_fun_Click(object sender, EventArgs e)
 		{
 			chekStartingTime();
-			itemDisplay ex = new itemDisplay("Fun");
+			sectionDisplay ex = new sectionDisplay("Fun");
 			ex.Show();
 		}
 
@@ -120,7 +126,8 @@ namespace guitarTrainer
 
 		private void btn_test_Click(object sender, EventArgs e)
 		{
-
+			frm_TestVlc testVlc = new frm_TestVlc();
+			testVlc.Show();
 		}
 	}
 }

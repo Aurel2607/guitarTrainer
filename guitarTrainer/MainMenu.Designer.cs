@@ -103,10 +103,10 @@
 			// lbl_clock
 			// 
 			this.lbl_clock.AutoSize = true;
-			this.lbl_clock.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_clock.Location = new System.Drawing.Point(188, 21);
+			this.lbl_clock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_clock.Location = new System.Drawing.Point(265, 12);
 			this.lbl_clock.Name = "lbl_clock";
-			this.lbl_clock.Size = new System.Drawing.Size(151, 37);
+			this.lbl_clock.Size = new System.Drawing.Size(79, 20);
 			this.lbl_clock.TabIndex = 5;
 			this.lbl_clock.Text = "00:00:00";
 			// 
@@ -167,7 +167,7 @@
 			this.gb_timer.Controls.Add(this.btn_timer_pause);
 			this.gb_timer.Controls.Add(this.btn_timer_start);
 			this.gb_timer.Controls.Add(this.lbl_elapse_tot);
-			this.gb_timer.Location = new System.Drawing.Point(180, 68);
+			this.gb_timer.Location = new System.Drawing.Point(186, 35);
 			this.gb_timer.Name = "gb_timer";
 			this.gb_timer.Size = new System.Drawing.Size(165, 86);
 			this.gb_timer.TabIndex = 9;
@@ -182,7 +182,6 @@
 			this.btn_timer_raz.TabIndex = 6;
 			this.btn_timer_raz.Text = "RAZ";
 			this.btn_timer_raz.UseVisualStyleBackColor = true;
-			this.btn_timer_raz.Click += new System.EventHandler(this.btn_timer_raz_Click);
 			// 
 			// btn_timer_pause
 			// 
