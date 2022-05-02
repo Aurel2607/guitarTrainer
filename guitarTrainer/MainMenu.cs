@@ -45,12 +45,6 @@ namespace guitarTrainer
 		{
 			chekStartingTime();
 			List<string[]> riffLst = AppConfigParser.parse("Riff");
-
-			foreach (string[] strTab in riffLst)
-			{
-				Console.WriteLine("Name:'" + strTab[0] + "', Pic:'" + strTab[1] + "', Audio:'" + strTab[2] + "', Video:'" + strTab[3]);
-			}
-
 			sectionDisplay ex = new sectionDisplay("Riff", riffLst);
 			ex.Show();
 		}
@@ -65,7 +59,8 @@ namespace guitarTrainer
 		private void btn_fun_Click(object sender, EventArgs e)
 		{
 			chekStartingTime();
-			sectionDisplay ex = new sectionDisplay("Fun");
+			List<string[]> funLst = AppConfigParser.parse("Fun");
+			sectionDisplay ex = new sectionDisplay("Fun", funLst);
 			ex.Show();
 		}
 
@@ -131,10 +126,5 @@ namespace guitarTrainer
 
 		}
 
-		private void btn_test_Click(object sender, EventArgs e)
-		{
-			frm_TestVlc testVlc = new frm_TestVlc();
-			testVlc.Show();
-		}
 	}
 }
