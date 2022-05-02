@@ -9,6 +9,12 @@ namespace guitarTrainer
 {
 	class AppConfigParser
 	{
+		public static string getRessourceFolder()
+		{
+			string strToReturn = ConfigurationManager.AppSettings.Get("res");
+			return strToReturn;
+		}
+
 		public static List<string[]> parse(string section)
 		{
 			string keyName = "";

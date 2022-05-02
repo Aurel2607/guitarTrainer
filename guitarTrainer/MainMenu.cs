@@ -44,7 +44,14 @@ namespace guitarTrainer
 		private void btn_riff_Click(object sender, EventArgs e)
 		{
 			chekStartingTime();
-			sectionDisplay ex = new sectionDisplay("Riff");
+			List<string[]> riffLst = AppConfigParser.parse("Riff");
+
+			foreach (string[] strTab in riffLst)
+			{
+				Console.WriteLine("Name:'" + strTab[0] + "', Pic:'" + strTab[1] + "', Audio:'" + strTab[2] + "', Video:'" + strTab[3]);
+			}
+
+			sectionDisplay ex = new sectionDisplay("Riff", riffLst);
 			ex.Show();
 		}
 

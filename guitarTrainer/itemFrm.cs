@@ -15,13 +15,12 @@ namespace guitarTrainer
 		public itemFrm(string[] argLst)
 		{
 			InitializeComponent();
-			int audioItem = 0;
-			int videoItem = 0;
 
 			// Affichage Nom
 			if (argLst[0] != null)
 			{
 				this.lbl_Title.Text = argLst[0];
+				this.Text = argLst[0];
 			}
 
 			// Affichage Image
@@ -31,7 +30,8 @@ namespace guitarTrainer
 				this.pb_file.Enabled = true;
 				try
 				{
-					this.pb_file.Image = Image.FromFile(@"H:\Aurel\Gratte\___Res___\" + argLst[1]);
+					string filePath = AppConfigParser.getRessourceFolder() + @"\" + argLst[1];
+					this.pb_file.Image = Image.FromFile(filePath);
 				}
 				catch(System.IO.FileNotFoundException)
 				{
@@ -50,8 +50,8 @@ namespace guitarTrainer
 				Console.WriteLine("Audio Name: '" + argLst[2] + "'");
 				this.vlc_Audio.CtlVisible = true;
 				this.vlc_Audio.Toolbar = true;
-				string filename = @"file:///H:\Aurel\Gratte\___Res___\" + argLst[2];
-				audioItem = vlc_Audio.playlist.add(filename);
+				string filename = "file:///" + @AppConfigParser.getRessourceFolder() + @"\" + argLst[2];
+				vlc_Audio.playlist.add(filename);
 			}
 			else
 			{
@@ -66,8 +66,8 @@ namespace guitarTrainer
 				Console.WriteLine("Video Name: '" + argLst[3] + "'");
 				this.vlc_video.CtlVisible = true;
 				this.vlc_video.Toolbar = true;
-				string filename = @"file:///H:\Aurel\Gratte\___Res___\" + argLst[3];
-				videoItem = vlc_video.playlist.add(filename);
+				string filename = "file:///" + @AppConfigParser.getRessourceFolder() + @"\" + argLst[3];
+				vlc_video.playlist.add(filename);
 			}
 			else
 			{
