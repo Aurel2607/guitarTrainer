@@ -60,13 +60,29 @@ namespace guitarTrainer
 				this.vlc_Audio.Toolbar = false;
 			}
 
-			// Affichage Video
+			// Affichage PlayBack
 			if (argLst[3] != "")
 			{
-				Console.WriteLine("Video Name: '" + argLst[3] + "'");
+				Console.WriteLine("PlayBack Name: '" + argLst[3] + "'");
+				this.vlc_PB.CtlVisible = true;
+				this.vlc_PB.Toolbar = true;
+				string filename = "file:///" + @AppConfigParser.getRessourceFolder() + @"\" + argLst[3];
+				vlc_PB.playlist.add(filename);
+			}
+			else
+			{
+				Console.WriteLine("PlayBack Name: None");
+				this.vlc_PB.CtlVisible = false;
+				this.vlc_PB.Toolbar = false;
+			}
+
+			// Affichage Video
+			if (argLst[4] != "")
+			{
+				Console.WriteLine("Video Name: '" + argLst[4] + "'");
 				this.vlc_video.CtlVisible = true;
 				this.vlc_video.Toolbar = true;
-				string filename = "file:///" + @AppConfigParser.getRessourceFolder() + @"\" + argLst[3];
+				string filename = "file:///" + @AppConfigParser.getRessourceFolder() + @"\" + argLst[4];
 				vlc_video.playlist.add(filename);
 			}
 			else
